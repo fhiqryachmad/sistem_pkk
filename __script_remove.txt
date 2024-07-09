@@ -1,0 +1,11 @@
+  <script>
+    //$(document).ready(function(){
+    function aksi(_link, _mode, _id) {
+      $(".modal-content").load(_link + "?mode=" + _mode + "&id=" + _id, function (response, status, xhr) {
+        if (status == "error") {
+          $(".modal-content").html("Terjadi Error: " + xhr.status + " " + xhr.statusText);
+        }
+      });
+    }
+    //});
+  </script>
