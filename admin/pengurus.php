@@ -11,7 +11,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><?php echo PROPERTI_BERITA; ?></title>
+  <title><?php echo PROPERTI_PENGURUS; ?></title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -53,7 +53,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1><?php echo PROPERTI_BERITA; ?></h1>
+              <h1><?php echo PROPERTI_PENGURUS; ?></h1>
             </div>
           </div>
         </div><!-- /.container-fluid -->
@@ -65,7 +65,7 @@
         <!-- Default box -->
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title"><?php echo PROPERTI_BERITA; ?></h3>
+            <h3 class="card-title"><?php echo PROPERTI_PENGURUS; ?></h3>
             <div class="float-right">
               <a href="<?php echo $dataform; ?>?mode=tambah" type="button" class="btn btn-primary" >Tambah <?php echo $caption; ?></a>
             </div>
@@ -74,13 +74,13 @@
             <!-- ISI KONTEN -->
             <!--DATA TABLE-->
             <?php get_data_info("tb_pengurus", "id_pengurus", 
-                array("id_pengurus", "id_pokja", "gambar", "nama","jabatan"), $dataform, "id_pengurus"); ?>
+                array("id_pengurus", "id_pokja", "gambar", "nama", "jabatan"), $dataform, "id_pengurus"); ?>
             <!--/*DATA TABLE -->
             <!-- /*ISI KONTEN -->
           </div>
           <!-- /.card-body -->
           <div class="card-footer">
-            <?php echo PROPERTI_BERITA; ?>
+            <?php echo PROPERTI_PENGURUS; ?>
           </div>
           <!-- /.card-footer-->
         </div>

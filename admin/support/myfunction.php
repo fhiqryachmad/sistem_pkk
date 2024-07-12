@@ -776,7 +776,7 @@ function view_data($tabel, $index, $field = array())
             echo "<div class='card-body'>";
             echo "<div class='card-title'><h3><bold>" . ucwords($result[$field[0]]) . "</bold></h3></div>";
             echo "<p class='card-text'>";
-            set_slug_news($result[$field[1]], 35);
+            set_slug_news($result[$field[1]], 5);
             echo "</p>";
             echo "<p class='card-text'>";
             echo "<small class='text-body-secondary'>Last updated 3 mins ago</small></p>";
@@ -800,7 +800,6 @@ function set_slug_news($berita, $pjg)
     }
     echo "...";
 }
-
 
 /********************************/
 
@@ -851,7 +850,7 @@ function frontend_view_galeri($tabel, $index, $field = array())
         while ($result = mysqli_fetch_assoc($query)) {
             echo "<div class='d-sm-flex'>";
             echo "<div class='single-news' style='width: 520px;'>";
-            echo "<div class='news-img' style='background-image: url(admin/images/" . $result[$field[1]] . ");'>";
+            echo "<div class='news-img' style='background-image: url(admin/images/" . $result[$field[0]] . ");'>";
             echo "</div>";
             echo "<div class='news-tag'>";
             echo "<ul class='my-3'>";
@@ -867,7 +866,6 @@ function frontend_view_galeri($tabel, $index, $field = array())
             echo "<div class='news-title'>";
             echo "<h4><a href='detailgaleri.php?id=". $result[$field[0]] ."'>";
             echo $result[$field[1]];
-            echo $result[$field[2]];
             echo "<span class='flaticon-next'></span></a></h4>";
             echo "</div>";
             echo "</div>";
@@ -890,7 +888,7 @@ function frontend_view_pengurus($tabel, $index, $field = array())
         while ($result = mysqli_fetch_assoc($query)) {
             echo "<div class='d-sm-flex'>";
             echo "<div class='single-news' style='width: 520px;'>";
-            echo "<div class='news-img' style='background-image: url(admin/images/" . $result[$field[1]] . ");'>";
+            echo "<div class='news-img' style='background-image: url(admin/images/" . $result[$field[0]] . ");'>";
             echo "</div>";
             echo "<div class='news-tag'>";
             echo "<ul class='my-3'>";
@@ -907,7 +905,6 @@ function frontend_view_pengurus($tabel, $index, $field = array())
             echo "<h4><a href='detailpengurus.php?id=". $result[$field[0]] ."'>";
             echo $result[$field[1]];
             echo $result[$field[2]];
-            echo $result[$field[3]];
             echo "<span class='flaticon-next'></span></a></h4>";
             echo "</div>";
             echo "</div>";

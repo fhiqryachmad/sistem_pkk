@@ -12,7 +12,7 @@ define("PARAM_PORT", 3306);
 
 // properti untuk VARIABEL PNEMAAN
 //Konfigurasi Halaman: admin/index.php
-define("HALAMAN_JUDUL_TAB", "SIM PKK");
+define("HALAMAN_JUDUL_TAB", "SIM-PKK-Petta");
 define("HALAMAN_JUDUL_HALAMAN", "Judul Halaman");
 define("HALAMAN_JUDUL_CARD", "Judul Card");
 define("HALAMAN_FOOTER_CARD", "Footer Card");
@@ -23,11 +23,14 @@ define ("SIDEBAR_NAMA_APLIKASI", "PKK Kampung Petta");
 // halaman berita
 define ("PROPERTI_BERITA", "Berita"); //halaman_judul_tab
 
-// halaman prokerrr
+// halaman proker
 define ("PROPERTI_PROKER", "Program Kerja"); //halaman_judul_tab
 
-// halaman pokka
+// halaman pokja
 define ("PROPERTI_POKJA", "POKJA"); //halaman_judul_tab
+
+// halaman pengurs
+define ("PROPERTI_PENGURUS", "Pengurus"); //halaman_judul_tab
 
 // footer
 define ("FOOTER_VERSI", 'Versi');
@@ -39,5 +42,5 @@ define ("FOOTER_COPYRIGHT_NAMA", 'Fhiqry');
 // hak akses
 define ("SUPERADMIN", "superadmin");
 define ("KADES", "kades");
-define ("SEKDES", "sekdes");
+define ("SEKRET", "sekret");
 

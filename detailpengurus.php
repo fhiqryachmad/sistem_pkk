@@ -104,6 +104,59 @@
         </div>
     </header>
 
+    <style>
+    .bg-main {
+      background-image: url('logobackgroundpkk.jpg'); /* Pastikan path gambar sesuai */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh; /* Tinggi halaman sesuai kebutuhan */
+      display: flex;
+      justify-content: top;
+      align-items: top;
+      text-align: top;
+      color: white; /* Warna teks */
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Opacity overlay */
+    }
+  </style>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="admin/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="admin/dist/css/adminlte.min.css">
+</head>
+
+<body class="hold-transition layout-top-nav">
+    <div class="wrapper">
+
+
+        <!-- Content Wrapper. Contains page content -->
+<body>
+  <nav class="navbar navbar-expand-md bg-black sticky-top border-bottom" data-bs-theme="black"></nav>
+  <main class="bg-main position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
+    <div class="overlay"></div> <!-- Overlay untuk efek gelap -->
+    <div class="col-md-6 p-lg-5 mx-auto my-5">
+      <h1 class="display-4 fw-bold">
+        SELAMAT DATANG
+      </h1>
+      <h2 class="fw-normal text-white mb-3">
+        Di Website PKK Kampung Petta
+      </h2>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+      </div>
+    </div>
+  </main>
+</body>
+
     <section class="download-area section-padding">
         <div class="container">
             <div class="row">
@@ -116,14 +169,11 @@
             </div>
             <div class="row">
                         <?php
-                        frontend_view_pengurus("tb_pengurus", "id_pengurus", array("id_pengurus", "gambar", "nama", "jabatan"));
+                        frontend_view_pengurus("tb_pengurus", "id_pengurus", array("gambar", "nama", "jabatan"));
                         ?>
             </div>
         </div>
-        <div class="more-job-btn mt-5 text-center">
-            <a href="https://pkk.umaberingin.desa.id/pengurus" class="template-btn">Selengkapnya<span
-                    class="flaticon-next"></span></a>
-        </div>
+    </div>
     </section>
     <!-- Footer Area Starts -->
     <footer class="footer-area section-padding">

@@ -79,26 +79,6 @@
           <!-- /.card-footer-->
         </div>
         <!-- /.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Personal</h3>
-          </div>
-          <div class="card-body">
-            <!-- ISI KONTEN -->
-            <!-- /*ISI KONTEN -->
-          </div>
-
-          <!-- /.card-body -->
-          <div class="card-footer">
-            <?php echo PROPERTI_BERITA; ?>
-          </div>
-          <!-- /.card-footer-->
-        </div>
-        <!-- /.card -->
-
-
       </section>
       <!-- /.content -->
     </div>

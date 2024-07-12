@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="keywords" content="PKK Kampung Petta">
-    <title>PKK Kampung Petta</title>
+    <title>SIM-PKK-Petta</title>
     <link rel="shortcut icon" href="https://pkk.umaberingin.desa.id/back_assets/img/icon_resmi.png" type="image/x-icon">
     <link href="https://pkk.umaberingin.desa.id/front_assets/css/animate-3.7.0.css" type="text/css" rel="stylesheet"
         media="all">
@@ -71,7 +71,7 @@
     </div>
     <a id="button-up"></a>
 
-    <header class="header-area main-header smart-scroll p-2 blur-ios border-bawah">
+    <header class="header-area main-header smart-scroll px-0 mx-0 blur-ios border-bawah">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -88,7 +88,7 @@
 
                     <div class="main-menu">
                         <ul>
-                            <li><a href="index.php">Beranda</a></li>
+                            <li><a href="beranda.php">Beranda</a></li>
                             <li><a href="detailberita.php?id">Berita</a>
                             </li>
                             <li><a href="detailgaleri.php?id">Galeri</a>
@@ -104,40 +104,58 @@
         </div>
     </header>
 
-    <!-- isi -->
-    <!-- Perkenalan Starts -->
-    <section id="perkenalan" class="download-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div>
-                        <h1>Selamat Datang Di PKK Kampung Petta</h1>
-                        <p class="py-1">
-                        <blockquote>
-                            <p style="text-align: justify;">Pemberdayaan dan Kesejahteraan Keluarga atau PKK adalah
-                                Organisasi kemasyarakatan yang memberdayakan wanita untuk turut berpartisipasi dalam
-                                pembangunan Indonesia. PKK sebagai gerakan pembangunan masyarakat bermula dari seminar
-                                <em>Home Economic</em> di Bogor tahun 1957. Sebagai tindak lanjut dari seminar tersebut,
-                                pada tahun 1961 panitia penyusunan tata susunan pelajaran pada Pendidikan Kesejahteraan
-                                Keluarga (PKK), Kementerian Pendidikan bersama kementerian-kementerian lainnya menyusun
-                                10 segi kehidupan keluarga. Gerakan PKK dimasyarakatkan berawal dari kepedulian istri
-                                gubernur Jawa Tengah pada tahun 1967 (Ibu Isriati Moenadi) setelah melihat keadaan
-                                masyarakat yang menderita busung lapar.
-                            </p>
-                        </blockquote>
-                        <p style="text-align: justify;"><strong><br />Salam,<br /></strong><strong>Ketua TP-PKK Kampung
-                                Petta</strong></p>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <img src="https://pkk.umaberingin.desa.id/back_assets/img/sambutan_background.jpg" alt=""
-                        style="padding: 20px 20px 20px 20px;" width="85%">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Perkenalan End --><!-- Berita slide Starts -->
+    <style>
+    .bg-main {
+      background-image: url('logobackgroundpkk.jpg'); /* Pastikan path gambar sesuai */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 93vh; /* Tinggi halaman sesuai kebutuhan */
+      display: flex;
+      justify-content: top;
+      align-items: top;
+      text-align: top;
+      color: white; /* Warna teks */
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Opacity overlay */
+    }
+  </style>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="admin/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="admin/dist/css/adminlte.min.css">
+</head>
+
+<body class="hold-transition layout-top-nav">
+    <div class="wrapper">
+
+
+        <!-- Content Wrapper. Contains page content -->
+<body>
+  <nav class="navbar navbar-expand-md bg-black sticky-top border-bottom" data-bs-theme="black"></nav>
+  <main class="bg-main position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
+    <div class="overlay"></div> <!-- Overlay untuk efek gelap -->
+    <div class="col-md-6 p-lg-5 mx-auto my-5">
+      <h1 class="display-4 fw-bold">
+        SELAMAT DATANG
+      </h1>
+      <h2 class="fw-normal text-white mb-3">
+        Di Website PKK Kampung Petta
+      </h2>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+      </div>
+    </div>
+  </main>
+</body>
     <section id="berita" class="employee-area section-padding">
 
         <div class="container">
@@ -180,7 +198,7 @@
             </div>
             <div class="row">
                         <?php
-                        frontend_view_pengurus("tb_pengurus", "id_pengurus", array("id_pengurus", "gambar",  "nama", "jabatan"));
+                        frontend_view_pengurus("tb_pengurus", "id_pengurus", array("gambar", "nama", "jabatan"));
                         ?>
             </div>
         </div>
@@ -209,7 +227,8 @@
                             class="template-btn">Kirim</button>
                     </form>
                 </div>
-            </div>
+        </div>
+</div>
         </div>
     </section>
     <!-- Footer Area Starts -->
