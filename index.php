@@ -218,16 +218,64 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form action="#">
-                        <input type="email" placeholder="Ketk di sini" onfocus="this.placeholder = ''"
-                            onblur="this.placeholder = 'Ketik di sini'" required>
-                        <button onclick="showSwal('success-message')" type="submit"
-                            class="template-btn">Kirim</button>
-                    </form>
-                </div>
-        </div>
+<head>
+    <style>
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 20px;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-container input[type="date"] {
+            padding: 9px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="col-lg-12">
+    <div class="form-container">
+        <form action="proses_saran.php" method="post">
+            <input type="text" name="nama" placeholder="Nama" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama'" required>
+            <input type="text" name="lindongan" placeholder="Lindongan" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Lindongan'" required>
+            <textarea name="saran" placeholder="Saran" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Saran'" required></textarea>
+            <input type="date" name="tanggal" required>
+            <button onclick="showSwal('success-message')" type="submit" class="template-btn">Kirim</button>
+        </form>
+</div>
+</div>
+</div>
 </div>
         </div>
     </section>
