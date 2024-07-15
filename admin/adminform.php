@@ -4,12 +4,12 @@
 
 $tabel          = "tb_admin"; // nama tabel
 $index          = "id"; // index / primary key
-$fileutama      = "admin.php"; // fil utama dari program kerja
+$fileutama      = "admin.php"; // file utama dari program kerja
 $fileupdate     = "adminform.php"; // file untuk update data
 $caption        = "ADMINISTRATOR"; // caption ack
 $captionTambah  = $caption . " Baru"; // caption tambah
 
-// refernsi
+// referensi
 $tabelRef = "tb_pokja";   // tabel referensi
 $indexRef = "id_pokja";   // index pokja
 

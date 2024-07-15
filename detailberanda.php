@@ -71,7 +71,7 @@
     </div>
     <a id="button-up"></a>
 
-    <header class="header-area main-header smart-scroll p-2 blur-ios border-bawah">
+    <header class="header-area main-header smart-scroll px-0 mx-0 blur-ios border-bawah">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -88,7 +88,7 @@
 
                     <div class="main-menu">
                         <ul>
-                            <li><a href="index.php">Beranda</a></li>
+                            <li><a href="detailberanda.php">Beranda</a></li>
                             <li><a href="detailberita.php?id">Berita</a>
                             </li>
                             <li><a href="detailgaleri.php?id">Galeri</a>
@@ -110,7 +110,7 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 100vh; /* Tinggi halaman sesuai kebutuhan */
+      height: 93vh; /* Tinggi halaman sesuai kebutuhan */
       display: flex;
       justify-content: top;
       align-items: top;
@@ -198,7 +198,7 @@
             </div>
             <div class="row">
                         <?php
-                        frontend_view_pengurus("tb_pengurus", "id_pengurus", array("gambar", "nama", "jabatan"));
+                        frontend_view_pengurus("tb_pengurus", "id_pengurus", array("id_pengurus", "id_pokja",  "gambar", "nama", "jabatan"));
                         ?>
             </div>
         </div>
@@ -218,16 +218,60 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form action="#">
-                        <input type="email" placeholder="Ketk di sini" onfocus="this.placeholder = ''"
-                            onblur="this.placeholder = 'Ketik di sini'" required>
-                        <button onclick="showSwal('success-message')" type="submit"
-                            class="template-btn">Kirim</button>
-                    </form>
-                </div>
-        </div>
+<head>
+    <style>
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 20px;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="col-lg-12">
+    <div class="form-container">
+        <form action="saranform.php" method="post">
+            <input type="text" name="nama" placeholder="Nama" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama'" required>
+            <input type="text" name="lindongan" placeholder="Lindongan" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Lindongan'" required>
+            <textarea name="saran" placeholder="Saran" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Saran'" required></textarea>
+            <button onclick="showSwal('success-message')" type="submit" class="template-btn">Kirim</button>
+        </form>
+</div>
+</div>
+</div>
 </div>
         </div>
     </section>

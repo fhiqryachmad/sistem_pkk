@@ -29,8 +29,11 @@ define ("PROPERTI_PROKER", "Program Kerja"); //halaman_judul_tab
 // halaman pokja
 define ("PROPERTI_POKJA", "POKJA"); //halaman_judul_tab
 
-// halaman pengurs
+// halaman pengurus
 define ("PROPERTI_PENGURUS", "Pengurus"); //halaman_judul_tab
+
+// halaman saran
+define ("PROPERTI_SARAN_MASYARAKAT", "Saran_masyarakat"); //halaman_judul_tab
 
 // footer
 define ("FOOTER_VERSI", 'Versi');

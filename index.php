@@ -1,4 +1,4 @@
-<?php require_once "admin/support/myfunction.php"; ?>
+<?php require_once "admin/support/myfunction.php";?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,7 +88,7 @@
 
                     <div class="main-menu">
                         <ul>
-                            <li><a href="beranda.php">Beranda</a></li>
+                            <li><a href="detailberanda.php">Beranda</a></li>
                             <li><a href="detailberita.php?id">Berita</a>
                             </li>
                             <li><a href="detailgaleri.php?id">Galeri</a>
@@ -198,7 +198,7 @@
             </div>
             <div class="row">
                         <?php
-                        frontend_view_pengurus("tb_pengurus", "id_pengurus", array("gambar", "nama", "jabatan"));
+                        frontend_view_pengurus("tb_pengurus", "id_pengurus", array("id_pengurus", "id_pokja",  "gambar", "nama", "jabatan"));
                         ?>
             </div>
         </div>
@@ -218,6 +218,7 @@
                     </div>
                 </div>
             </div>
+
 <head>
     <style>
         .form-container {
@@ -257,20 +258,16 @@
             background-color: #0056b3;
         }
 
-        .form-container input[type="date"] {
-            padding: 9px;
-        }
     </style>
 </head>
 <body>
 
 <div class="col-lg-12">
     <div class="form-container">
-        <form action="proses_saran.php" method="post">
+        <form action="saranform.php" method="post">
             <input type="text" name="nama" placeholder="Nama" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama'" required>
             <input type="text" name="lindongan" placeholder="Lindongan" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Lindongan'" required>
             <textarea name="saran" placeholder="Saran" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Saran'" required></textarea>
-            <input type="date" name="tanggal" required>
             <button onclick="showSwal('success-message')" type="submit" class="template-btn">Kirim</button>
         </form>
 </div>

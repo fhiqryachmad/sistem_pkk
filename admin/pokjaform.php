@@ -4,12 +4,12 @@
 
 $tabel          = "tb_pokja"; // nama tabel
 $index          = "id_pokja"; // index / primary key
-$fileutama      = "pokja.php"; // fil utama dari program kerja
+$fileutama      = "pokja.php"; // file utama dari program kerja
 $fileupdate     = "pokjaform.php"; // file untuk update data
 $caption        = "POKJA"; // caption ack
-$captionTambah  = $caption . " Baru"; // captio tambah
+$captionTambah  = $caption . " Baru"; // caption tambah
 
-// refernsi
+// referensi
 $tabelRef = "tb_pokja";   // tabel referensi
 $indexRef = "id_pokja";   // index pokja
 
@@ -27,7 +27,7 @@ $total = count($labelarr);
 // proses edit atau tambah
 if (isset($_GET['mode'])) {
   if ($_GET["mode"] == "edit") {
-    // prosses untuk menampilkan data untuk update
+    // proses untuk menampilkan data untuk update
     $mode = "edit";
     $dataarr = load_data_from_speisifk_tabel($tabel, $index, $_GET["id"]);
     $tombol_caption = "Update Data";

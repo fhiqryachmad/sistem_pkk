@@ -4,9 +4,9 @@
 
 $tabel = "tb_proker";       // nama tabel
 $index = "id_proker";       // index / primary key
-$fileutama = "proker.php";  // fil utama dari program kerja
+$fileutama = "proker.php";  // file utama dari program kerja
 
-// refernsi
+// referensi
 $tabelRef = "tb_pokja";   // tabel referensi
 $indexRef = "id_pokja";   // index pokja
 

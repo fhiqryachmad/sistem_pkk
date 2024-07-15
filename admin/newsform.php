@@ -4,10 +4,10 @@
 
 $tabel          = "tb_berita";      // nama tabel
 $index          = "id_berita";      // index / primary key
-$fileutama      = "news.php";       // fil utama dari program kerja
+$fileutama      = "news.php";       // file utama dari program kerja
 $fileupdate     = "newsform.php";   // file untuk update data
 $caption        = "BERITA";         // caption ack
-$captionTambah  = $caption . " Baru"; // captio tambah
+$captionTambah  = $caption . " Baru"; // caption tambah
 
 // referensi yang digunaan pada semua tabel
 $tabelRef = "tb_pokja";   // tabel referensi

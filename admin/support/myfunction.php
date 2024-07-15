@@ -741,8 +741,8 @@ function get_sidebar_menu($status)
     $link = array();
 
     if ($status == "superadmin") {
-        $menu = array("Admin", "Berita", "Program Kerja", "POKJA", "Galeri Kegiatan", "Pengurus");
-        $link = array("admin.php", "news.php", "proker.php", "pokja.php", "galeri.php", "pengurus.php");
+        $menu = array("Admin", "Berita", "Program Kerja", "POKJA", "Galeri Kegiatan", "Pengurus", "Saran Masyarakat");
+        $link = array("admin.php", "news.php", "proker.php", "pokja.php", "galeri.php", "pengurus.php", "saran.php");
     } else if ($status == "kades" or $status == "sekret") {
         $menu = array("Program Kerja");
         $link = array("proker.php");
@@ -776,7 +776,7 @@ function view_data($tabel, $index, $field = array())
             echo "<div class='card-body'>";
             echo "<div class='card-title'><h3><bold>" . ucwords($result[$field[0]]) . "</bold></h3></div>";
             echo "<p class='card-text'>";
-            set_slug_news($result[$field[1]], 5);
+            set_slug_news($result[$field[1]],5);
             echo "</p>";
             echo "<p class='card-text'>";
             echo "<small class='text-body-secondary'>Last updated 3 mins ago</small></p>";
@@ -850,7 +850,7 @@ function frontend_view_galeri($tabel, $index, $field = array())
         while ($result = mysqli_fetch_assoc($query)) {
             echo "<div class='d-sm-flex'>";
             echo "<div class='single-news' style='width: 520px;'>";
-            echo "<div class='news-img' style='background-image: url(admin/images/" . $result[$field[0]] . ");'>";
+            echo "<div class='news-img' style='background-image: url(admin/images/" . $result[$field[1]] . ");'>";
             echo "</div>";
             echo "<div class='news-tag'>";
             echo "<ul class='my-3'>";
@@ -865,7 +865,7 @@ function frontend_view_galeri($tabel, $index, $field = array())
             echo "</div>";
             echo "<div class='news-title'>";
             echo "<h4><a href='detailgaleri.php?id=". $result[$field[0]] ."'>";
-            echo $result[$field[1]];
+            echo $result[$field[2]];
             echo "<span class='flaticon-next'></span></a></h4>";
             echo "</div>";
             echo "</div>";
@@ -888,7 +888,42 @@ function frontend_view_pengurus($tabel, $index, $field = array())
         while ($result = mysqli_fetch_assoc($query)) {
             echo "<div class='d-sm-flex'>";
             echo "<div class='single-news' style='width: 520px;'>";
-            echo "<div class='news-img' style='background-image: url(admin/images/" . $result[$field[0]] . ");'>";
+            echo "<div class='news-img' style='background-image: url(admin/images/" . $result[$field[2]] . ");'>";
+            echo "</div>";
+            echo "<div class='news-tag'>";
+            echo "<ul class='my-3'>";
+            echo "<li>";
+            echo "<li>";
+            echo $result[$field[4]];
+            echo "<div class='fa fa-folder-open-o'></div> Pokja " . $result[$field[1]] . " PKK Kampung Petta</h5>";
+            echo "</li>";
+            echo "</ul>";
+            echo "</div>";
+            echo "<div class='news-title'>";
+            echo "<h4><a href='detailpengurus.php?id=" . $result[$field[0]] ."'>";
+            echo $result[$field[3]];
+            echo "<span class='flaticon-next'></span></a></h4>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+
+        }
+
+        do_destroy_koneksi();
+    }
+}
+
+/********************************/
+
+function frontend_insert_saran($tabel, $index, $field = array())
+{
+    if (get_koneksi()) {
+        $sql = "insert * into " . $tabel . " order by " . $index . " DESC ";
+        $query = mysqli_query(get_koneksi(), $sql);
+
+        while ($result = mysqli_fetch_assoc($query)) {
+            echo "<div class='d-sm-flex'>";
+            echo "<div class='single-news' style='width: 520px;'>";
             echo "</div>";
             echo "<div class='news-tag'>";
             echo "<ul class='my-3'>";
@@ -902,9 +937,10 @@ function frontend_view_pengurus($tabel, $index, $field = array())
             echo "</ul>";
             echo "</div>";
             echo "<div class='news-title'>";
-            echo "<h4><a href='detailpengurus.php?id=". $result[$field[0]] ."'>";
+            echo "<h4><a href='detailsaran.php?id=". $result[$field[0]] ."'>";
             echo $result[$field[1]];
             echo $result[$field[2]];
+            echo $result[$field[3]];
             echo "<span class='flaticon-next'></span></a></h4>";
             echo "</div>";
             echo "</div>";

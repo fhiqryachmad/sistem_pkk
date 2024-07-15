@@ -4,10 +4,10 @@
 
 $tabel          = "tb_galeri";      // nama tabel
 $index          = "id_galeri";      // index / primary key
-$fileutama      = "galeri.php";       // fil utama dari program kerja
+$fileutama      = "galeri.php";       // file utama dari program kerja
 $fileupdate     = "galeriform.php";   // file untuk update data
 $caption        = "GALERI";         // caption ack
-$captionTambah  = $caption . " Baru"; // captio tambah
+$captionTambah  = $caption . " Baru"; // caption tambah
 
 // referensi yang digunaan pada semua tabel
 $tabelRef = "tb_pokja";   // tabel referensi

@@ -4,10 +4,10 @@
 
 $tabel          = "tb_pengurus";      // nama tabel
 $index          = "id_pengurus";      // index / primary key
-$fileutama      = "pengurus.php";       // fil utama dari program kerja
+$fileutama      = "pengurus.php";       // file utama dari program kerja
 $fileupdate     = "pengurusform.php";   // file untuk update data
 $caption        = "PENGURUS";         // caption ack
-$captionTambah  = $caption . " Baru"; // captio tambah
+$captionTambah  = $caption . " Baru"; // caption tambah
 
 // referensi yang digunaan pada semua tabel
 $tabelRef = "tb_pokja";   // tabel referensi

@@ -87,7 +87,7 @@
 
                     <div class="main-menu">
                         <ul>
-                            <li><a href="index.php">Beranda</a></li>
+                            <li><a href="detailberanda.php">Beranda</a></li>
                             <li><a href="detailberita.php?id">Berita</a>
                             </li>
                             <li><a href="detailgaleri.php?id">Galeri</a>
@@ -102,59 +102,6 @@
             </div>
         </div>
     </header>
-
-    <style>
-    .bg-main {
-      background-image: url('logobackgroundpkk.jpg'); /* Pastikan path gambar sesuai */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 100vh; /* Tinggi halaman sesuai kebutuhan */
-      display: flex;
-      justify-content: top;
-      align-items: top;
-      text-align: top;
-      color: white; /* Warna teks */
-    }
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5); /* Opacity overlay */
-    }
-  </style>
-
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="admin/plugins/fontawesome-free/css/all.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="admin/dist/css/adminlte.min.css">
-</head>
-
-<body class="hold-transition layout-top-nav">
-    <div class="wrapper">
-
-
-        <!-- Content Wrapper. Contains page content -->
-<body>
-  <nav class="navbar navbar-expand-md bg-black sticky-top border-bottom" data-bs-theme="black"></nav>
-  <main class="bg-main position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
-    <div class="overlay"></div> <!-- Overlay untuk efek gelap -->
-    <div class="col-md-6 p-lg-5 mx-auto my-5">
-      <h1 class="display-4 fw-bold">
-        SELAMAT DATANG
-      </h1>
-      <h2 class="fw-normal text-white mb-3">
-        Di Website PKK Kampung Petta
-      </h2>
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-      </div>
-    </div>
-  </main>
-</body>
 
     <section id="berita" class="employee-area section-padding">
         <div class="container">
@@ -193,14 +140,56 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form action="#">
-                        <input type="email" placeholder="Ketik di sini" onfocus="this.placeholder = ''"
-                            onblur="this.placeholder = 'Ketik di sini'" required>
-                        <button onclick="showSwal('success-message')" type="submit"
-                            class="template-btn">Kirim</button>
-                    </form>
+            <style>
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 20px;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="col-lg-12">
+    <div class="form-container">
+        <form action="proses_saran.php" method="post">
+            <input type="text" name="nama" placeholder="Nama" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama'" required>
+            <input type="text" name="lindongan" placeholder="Lindongan" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Lindongan'" required>
+            <textarea name="saran" placeholder="Saran" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Saran'" required></textarea>
+            <button onclick="showSwal('success-message')" type="submit" class="template-btn">Kirim</button>
+        </form>
                 </div>
             </div>
         </div>
