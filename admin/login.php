@@ -33,6 +33,7 @@ jump_if_login_sucess();
             border: none;
             border-radius: 15px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 100px; /* Jarak dari atas */
         }
         .card-header {
             background-color: #2980b9; /* Warna header card */
@@ -45,6 +46,7 @@ jump_if_login_sucess();
             border: 1px solid #ccc;
             border-radius: 5px;
             transition: box-shadow 0.3s ease-in-out;
+            margin-bottom: 15px; /* Jarak antar elemen form */
         }
         .form-control:focus {
             border-color: #2980b9; /* Warna border saat focus */
@@ -54,10 +56,14 @@ jump_if_login_sucess();
             background-color: #2980b9; /* Warna tombol */
             border-color: #2980b9;
             transition: background-color 0.3s ease;
+            width: 100%; /* Lebar tombol penuh */
         }
         .btn-primary:hover {
             background-color: #1f6696; /* Warna tombol saat hover */
             border-color: #1f6696;
+        }
+        .form-floating label {
+            padding-left: 10px; /* Padding label */
         }
     </style>
 </head>
@@ -69,10 +75,11 @@ jump_if_login_sucess();
                     <div class="row justify-content-center">
                         <div class="col-lg-5">
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                <div class="card-header"><h3 class="text-center font-weight-light my-4">Selamat Datang di Website PKK Kampung Petta</h3></div>
+                                <div class="card-header">
+                                    <h3 class="text-center font-weight-light my-4">Masuk Ke Akun</h3>
+                                </div>
                                 <div class="card-body">
                                     <form method="post" action="login.php">
-                                        
                                         <div class="form-floating mb-3">
                                             <input class="form-control" name="username" id="username" type="text" placeholder="Username" />
                                             <label for="username">Username</label>
@@ -81,7 +88,6 @@ jump_if_login_sucess();
                                             <input class="form-control" name="password" id="inputPassword" type="password" placeholder="Password" />
                                             <label for="inputPassword">Password</label>
                                         </div>
-                                        
                                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                             <button type="submit" class="btn btn-primary" name="login">Login</button>
                                             <input type="hidden" name="submit" value="proses" />
