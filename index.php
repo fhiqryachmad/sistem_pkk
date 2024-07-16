@@ -88,7 +88,7 @@
 
                     <div class="main-menu">
                         <ul>
-                            <li><a href="detailberanda.php">Beranda</a></li>
+                            <li><a href="index.php">Beranda</a></li>
                             <li><a href="detailberita.php?id">Berita</a>
                             </li>
                             <li><a href="detailgaleri.php?id">Galeri</a>
@@ -264,12 +264,59 @@
 
 <div class="col-lg-12">
     <div class="form-container">
-        <form action="saranform.php" method="post">
-            <input type="text" name="nama" placeholder="Nama" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama'" required>
-            <input type="text" name="lindongan" placeholder="Lindongan" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Lindongan'" required>
-            <textarea name="saran" placeholder="Saran" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Saran'" required></textarea>
-            <button onclick="showSwal('success-message')" type="submit" class="template-btn">Kirim</button>
-        </form>
+    <style>
+        .notification {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            display: none; /* Mulanya disembunyikan */
+        }
+        .success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .error {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div id="notification" class="notification"></div>
+
+    <form action="saranproses.php" method="post">
+        <input type="text" name="nama" placeholder="Nama" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama'" required>
+        <input type="text" name="lindongan" placeholder="Lindongan" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Lindongan'" required>
+        <textarea name="saran" placeholder="Saran" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Saran'" required></textarea>
+        <button type="submit" class="template-btn">Kirim</button>
+    </form>
+
+    <script>
+        window.onload = function() {
+            // Cek status dari session PHP
+            <?php if (isset($_SESSION['status'])): ?>
+                var status = "<?php echo $_SESSION['status']; ?>";
+                var notification = document.getElementById('notification');
+                
+                if (status === 'success') {
+                    notification.textContent = 'Saran berhasil dikirim!';
+                    notification.className = 'notification success';
+                } else if (status === 'error') {
+                    notification.textContent = 'Terjadi kesalahan saat mengirim saran.';
+                    notification.className = 'notification error';
+                }
+
+                // Tampilkan notifikasi
+                notification.style.display = 'block';
+
+                
+            <?php endif; ?>
+        }
+    </script>
+</body>
 </div>
 </div>
 </div>

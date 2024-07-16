@@ -88,7 +88,7 @@
 
                     <div class="main-menu">
                         <ul>
-                            <li><a href="detailberanda.php/">Beranda</a></li>
+                            <li><a href="index.php/">Beranda</a></li>
                             <li><a href="detailberita.php?id">Berita</a>
                             </li>
                             <li><a href="detailgaleri.php?id">Galeri</a>
