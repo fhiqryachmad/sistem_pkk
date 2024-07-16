@@ -744,8 +744,8 @@ function get_sidebar_menu($status)
         $menu = array("Admin", "Berita", "Program Kerja", "POKJA", "Galeri Kegiatan", "Pengurus", "Saran Masyarakat");
         $link = array("admin.php", "news.php", "proker.php", "pokja.php", "galeri.php", "pengurus.php", "saran.php");
     } else if ($status == "kades" or $status == "sekret") {
-        $menu = array("Program Kerja");
-        $link = array("proker.php");
+        $menu = array("Program Kerja", "Saran Masyarakat");
+        $link = array("proker.php", "saran.php");
     }
 
     foreach ($menu as $index => $mn) {

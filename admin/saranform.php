@@ -86,7 +86,7 @@ if (isset($_POST["proses"])) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><?php echo PROPERTI_SARAN_MASYARAKAT; ?></title>
+  <title><?php echo PROPERTI_SARAN; ?></title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -127,7 +127,7 @@ if (isset($_POST["proses"])) {
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1><?php echo PROPERTI_SARAN_MASYARAKAT; ?></h1>
+            <h1>Saran Masyarakat</h1>
             </div>
           </div>
         </div><!-- /.container-fluid -->
@@ -138,7 +138,7 @@ if (isset($_POST["proses"])) {
         <!-- Default box -->
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title"><?php echo PROPERTI_SARAN_MASYARAKAT; ?></h3>
+          <h3 class="card-title">Saran Masyarakat</h3>
             <div class="float-right">
               <a href="<?php echo $fileutama; ?>" type="button" class="btn btn-primary">Back to <?php echo $caption; ?></a>
             </div>

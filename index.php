@@ -218,7 +218,6 @@
                     </div>
                 </div>
             </div>
-
 <head>
     <style>
         .form-container {
@@ -312,7 +311,8 @@
                 // Tampilkan notifikasi
                 notification.style.display = 'block';
 
-                
+                // Hapus status dari session agar tidak muncul lagi setelah refresh
+                <?php unset($_SESSION['status']); ?>
             <?php endif; ?>
         }
     </script>
@@ -321,7 +321,7 @@
 </div>
 </div>
 </div>
-        </div>
+</div>
     </section>
     <!-- Footer Area Starts -->
     <footer class="footer-area section-padding">

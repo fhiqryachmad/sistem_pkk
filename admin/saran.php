@@ -3,7 +3,7 @@
 <?php 
   $caption    = "Saran Baru";
   $fileutama  = "saran.php";
-  $pokjaform  = "saranform.php";
+  $saranform  = "saranform.php";
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><?php echo PROPERTI_SARAN_MASYARAKAT; ?></title>
+  <title>Saran</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -52,7 +52,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1><?php echo PROPERTI_SARAN_MASYARAKAT; ?></h1>
+            <h1>Saran Masyarakat</h1>
             </div>
           </div>
         </div><!-- /.container-fluid -->
@@ -64,7 +64,7 @@
         <!-- Default box -->
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title"><?php echo PROPERTI_SARAN_MASYARAKAT; ?></h3>
+          <h3 class="card-title">Saran</h3>
             <div class="float-right">
               <a href="<?php echo $saranform; ?>?mode=tambah" type="button" class="btn btn-primary">Tambah <?php echo $caption; ?></a>
             </div>
@@ -80,7 +80,7 @@
           </div>
           <!-- /.card-body -->
           <div class="card-footer">
-            <?php echo PROPERTI_SARAN_MASYARAKAT; ?>
+           Saran Masyarakat
           </div>
           <!-- /.card-footer-->
         </div>
