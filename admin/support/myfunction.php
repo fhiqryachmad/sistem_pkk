@@ -12,9 +12,9 @@ function get_koneksi()
         PARAM_PORT
     );
 
-    // Check connection
+    // Periksa koneksi
     if (mysqli_connect_error()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        echo "Gagal terhubung ke MySQL: " . mysqli_connect_error();
         exit();
     }
 
@@ -32,7 +32,7 @@ function cek_jika_belum_login()
         echo "<br />";
         echo "<div class=\"card\">
             <div class=\"card-body\">
-                Maaf, anda belum melakukan login. <a href=\"login.php\">Silahkan login dahulu</a>.
+                Maaf, Anda belum melakukan login. <a href=\"login.php\">Silakan login dahulu</a>.
             </div>
         </div>";
         exit();
@@ -82,19 +82,19 @@ function login($user, $pass)
             if ($hitung > 0) {
                 $_SESSION['log'] = true; // Gunakan boolean true, bukan string 'true'
 
-                // ambil hak akses
+                // Ambil hak akses
                 $_SESSION["hakakses"] = $result["hak_akses"];
 
-                // close connection
+                // Tutup koneksi
                 mysqli_free_result($query);
                 do_destroy_koneksi();
 
-                // jumper
+                // Redirect
                 //header('location:index.php');
                 //exit; // Penting: setelah header location, pastikan untuk exit
 
             } else {
-                // close connection
+                // Tutup koneksi
                 do_destroy_koneksi();
 
                 //header('location:login.php');
@@ -118,7 +118,7 @@ function load_data_from_speisifk_tabel($tabel, $key, $id)
     if (get_koneksi()) {
         $data_arr = array();
 
-        $sql = "select * from " . $tabel . " where " . $key . " = " . $id;
+        $sql = "SELECT * FROM " . $tabel . " WHERE " . $key . " = " . $id;
         $query = mysqli_query(get_koneksi(), $sql);
         $result = mysqli_fetch_array($query);
 
@@ -138,7 +138,7 @@ function load_field_data($tabel)
 {
     if (get_koneksi()) {
         $arr_label = array();
-        $sql = "select * from " . $tabel;
+        $sql = "SELECT * FROM " . $tabel;
         $query = mysqli_query(get_koneksi(), $sql);
         $result = mysqli_fetch_array($query);
 
@@ -254,7 +254,7 @@ function load_type_of_data($tabel)
 {
     if (get_koneksi()) {
         $arr_type = array();
-        $sql = "select * from " . $tabel;
+        $sql = "SELECT * FROM " . $tabel;
         $query = mysqli_query(get_koneksi(), $sql);
         $total = mysqli_num_fields($query);
 
@@ -286,7 +286,7 @@ function konversi_string_to_int($string)
 function get_data_info($tabel, $primary_key, $dt = array(), $gotofile, $key)
 {
     if (get_koneksi()) {
-        $sql = "SELECT * FROM " . $tabel . " order by " . $primary_key . " DESC";
+        $sql = "SELECT * FROM " . $tabel . " ORDER BY " . $primary_key . " DESC";
         $query = mysqli_query(get_koneksi(), $sql);
 
         $field = $dt;
@@ -323,21 +323,12 @@ function get_data_info($tabel, $primary_key, $dt = array(), $gotofile, $key)
             }
             echo "<td>";
 
-            echo "<a href=" . $gotofile . "?mode=edit&id=" . $data[$key] . " type='button' class= ";
-            if ($_SESSION["hakakses"] != SUPERADMIN) {
-                echo " 'btn btn btn-outline-secondary disabled' ";
+            // Hanya superadmin yang bisa hapus
+            if ($_SESSION["hakakses"] == SUPERADMIN) {
+                echo "<a href=" . $gotofile . "?mode=hapus&id=" . $data[$key] . " type='button' class='btn btn-danger'>Hapus</a>";
             } else {
-                echo " 'btn btn-success'";
+                echo "<button type='button' class='btn btn-outline-secondary disabled'>Hapus</button>";
             }
-            echo " >Edit</a> ";
-
-            echo "<a href=" . $gotofile . "?mode=hapus&id=" . $data[$key] . " type='button' class=";
-            if ($_SESSION["hakakses"] != SUPERADMIN) {
-                echo " 'btn btn btn-outline-secondary disabled' ";
-            } else {
-                echo " 'btn btn-danger' ";
-            }
-            echo " >Hapus</a>";
             echo "</td>";
             echo "</tr>";
         }

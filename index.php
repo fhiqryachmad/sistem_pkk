@@ -284,38 +284,41 @@
     </style>
 </head>
 <body>
-    <div id="notification" class="notification"></div>
+<div class="col-lg-12">
+    <div class="form-container">
+        <div id="notification" class="notification"></div> <!-- Element notifikasi -->
+        <form action="saranproses.php" method="post">
+            <input type="text" name="nama" placeholder="Nama" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama'" required>
+            <input type="text" name="lindongan" placeholder="Lindongan" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Lindongan'" required>
+            <textarea name="saran" placeholder="Saran" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Saran'" required></textarea>
+            <button type="submit" class="template-btn">Kirim</button>
+        </form>
+    </div>
+</div>
 
-    <form action="saranproses.php" method="post">
-        <input type="text" name="nama" placeholder="Nama" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama'" required>
-        <input type="text" name="lindongan" placeholder="Lindongan" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Lindongan'" required>
-        <textarea name="saran" placeholder="Saran" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Saran'" required></textarea>
-        <button type="submit" class="template-btn">Kirim</button>
-    </form>
+<script>
+    window.onload = function() {
+        // Cek status dari session PHP
+        <?php if (isset($_SESSION['status'])): ?>
+            var status = "<?php echo $_SESSION['status']; ?>";
+            var notification = document.getElementById('notification');
+            
+            if (status === 'success') {
+                notification.textContent = 'Saran berhasil dikirim!';
+                notification.className = 'notification success';
+            } else if (status === 'error') {
+                notification.textContent = 'Terjadi kesalahan saat mengirim saran.';
+                notification.className = 'notification error';
+            }
 
-    <script>
-        window.onload = function() {
-            // Cek status dari session PHP
-            <?php if (isset($_SESSION['status'])): ?>
-                var status = "<?php echo $_SESSION['status']; ?>";
-                var notification = document.getElementById('notification');
-                
-                if (status === 'success') {
-                    notification.textContent = 'Saran berhasil dikirim!';
-                    notification.className = 'notification success';
-                } else if (status === 'error') {
-                    notification.textContent = 'Terjadi kesalahan saat mengirim saran.';
-                    notification.className = 'notification error';
-                }
+            // Tampilkan notifikasi
+            notification.style.display = 'block';
 
-                // Tampilkan notifikasi
-                notification.style.display = 'block';
-
-                // Hapus status dari session agar tidak muncul lagi setelah refresh
-                <?php unset($_SESSION['status']); ?>
-            <?php endif; ?>
-        }
-    </script>
+            // Hapus status dari session agar tidak muncul lagi setelah refresh
+            <?php unset($_SESSION['status']); ?>
+        <?php endif; ?>
+    }
+</script>
 </body>
 </div>
 </div>

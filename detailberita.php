@@ -74,7 +74,6 @@
     <header class="header-area main-header smart-scroll p-2 blur-ios border-bawah">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
                     <div class="logo-area">
                     <img height="50" src="logo.png" alt="logo"></a>
                 </div>

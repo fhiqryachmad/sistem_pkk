@@ -3,7 +3,6 @@
 <?php 
   $caption    = "Saran Baru";
   $fileutama  = "saran.php";
-  $saranform  = "saranform.php";
 ?>
 
 <!DOCTYPE html>
@@ -14,25 +13,19 @@
   <title>Saran</title>
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
-
-  <!-- link css boostrat -->
+  <!-- link css bootstrap -->
   <link rel="stylesheet" href="plugins/bootstrap5.3.3/css/bootstrap.min.css" />
-
   <!-- link jquery dan javascript -->
   <script src="plugins/bootstrap5.3.3/js/bootstrap.min.js"></script>
-
   <!-- DATA TABLE -->
   <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-  <!-- /*DATA TABLE -->
-
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -52,22 +45,18 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-            <h1>Saran Masyarakat</h1>
+              <h1>Saran Masyarakat</h1>
             </div>
           </div>
-        </div><!-- /.container-fluid -->
+        </div>
       </section>
 
       <!-- Main content -->
       <section class="content">
-
         <!-- Default box -->
         <div class="card">
           <div class="card-header">
-          <h3 class="card-title">Saran</h3>
-            <div class="float-right">
-              <a href="<?php echo $saranform; ?>?mode=tambah" type="button" class="btn btn-primary">Tambah <?php echo $caption; ?></a>
-            </div>
+            <h3 class="card-title">Saran</h3>
           </div>
           <div class="card-body">
             <!-- ISI KONTEN -->
@@ -80,25 +69,22 @@
           </div>
           <!-- /.card-body -->
           <div class="card-footer">
-           Saran Masyarakat
+            Saran Masyarakat
           </div>
           <!-- /.card-footer-->
         </div>
         <!-- /.card -->
-
       </section>
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
     <?php footer(); ?>
-
   </div>
   <!-- ./wrapper -->
 
   <?php include ('support/_script.php'); ?>
 
   <!-- DATA TABLE -->
-  <!-- DataTables & Plugins -->
   <script src="plugins/datatables/jquery.dataTables.min.js"></script>
   <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
   <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
@@ -126,8 +112,5 @@
       }).buttons().container().appendTo('#tabel_wrapper .col-md-6:eq(0)');
     });
   </script>
-  <!-- /*DATA TABLE -->
-
 </body>
-
 </html>
